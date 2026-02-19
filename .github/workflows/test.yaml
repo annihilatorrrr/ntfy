@@ -3,6 +3,22 @@ on: [ push, pull_request ]
 jobs:
   test:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_USER: ntfy
+          POSTGRES_PASSWORD: ntfy
+          POSTGRES_DB: ntfy_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U ntfy"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      NTFY_TEST_DATABASE_URL: "postgres://ntfy:ntfy@localhost:5432/ntfy_test?sslmode=disable"
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
