@@ -39,7 +39,7 @@ jobs:
       - name: Build web app (required for tests)
         run: make web
       - name: Run tests, formatting, vetting and linting
-        run: make check
+        run: make checkv
       - name: Run coverage
         run: make coverage
       - name: Upload coverage to codecov.io
