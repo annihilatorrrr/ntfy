@@ -22,6 +22,7 @@ jobs:
           --health-retries 5
     env:
       NTFY_TEST_DATABASE_URL: "postgres://ntfy:ntfy@localhost:5432/ntfy_test?sslmode=disable"
+      NTFY_TEST_S3_URL: ${{ secrets.NTFY_TEST_S3_URL }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
