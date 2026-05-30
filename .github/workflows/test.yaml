@@ -25,7 +25,7 @@ jobs:
       NTFY_TEST_S3_URL: ${{ secrets.NTFY_TEST_S3_URL }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6
       - name: Install Go
         uses: actions/setup-go@v4
         with:
