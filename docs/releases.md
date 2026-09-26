@@ -2093,6 +2093,12 @@ and the [ntfy Android app](https://github.com/binwiederhier/ntfy-android/release
 
 ## Not released yet
 
+### ntfy server v2.28.1 (UNRELEASED)
+
+**Bug fixes + maintenance:**
+
+* Use the PostgreSQL row estimate for the `messages_cached` metric instead of a full-table `COUNT(*)` every minute
+
 ### ntfy iOS app v1.8.0 (UNRELEASED)
 
 **Features:**
